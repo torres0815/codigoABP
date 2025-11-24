@@ -1,0 +1,1315 @@
+/*
+ * Archivo: style_final.css
+ * Descripción: Hoja de estilos CSS para el sitio web ETS INFOPLUS.
+ * Define la apariencia, el diseño y la responsividad de la página.
+ */
+
+/* ==========================================================================
+   1. Reset y Variables Globales
+   ========================================================================== */
+
+* {
+    /* Selector universal: aplica a todos los elementos. */
+    margin: 0;
+    /* Elimina el margen predeterminado. */
+    padding: 0;
+    /* Elimina el relleno predeterminado. */
+    box-sizing: border-box;
+    /* Asegura que el padding y el borde se incluyan en el ancho y alto total del elemento. */
+}
+
+:root {
+    /* Variables CSS para colores y dimensiones, facilitando la gestión de estilos. */
+    --primary-blue: #0099FF;
+    /* Azul principal para acentos y enlaces. */
+    --light-gray: #f0f0f0;
+    /* Gris claro para fondos de secciones. */
+    --dark-gray: #333333;
+    /* Gris oscuro para texto principal. */
+    --border-gray: #cccccc;
+    /* Gris para bordes y separadores. */
+    --text-gray: #666666;
+    /* Gris medio para texto secundario. */
+    --white: #ffffff;
+    /* Color blanco. */
+    --max-width: 1200px;
+    /* Ancho máximo del contenido principal. */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Habilita el desplazamiento suave al hacer clic en enlaces de anclaje (ej. en la tabla de navegación). */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Fuente principal del texto. */
+    line-height: 1.6;
+    /* Espaciado entre líneas para mejor legibilidad. */
+    color: var(--dark-gray);
+    /* Color de texto predeterminado. */
+    background-color: #e8e8e8;
+    /* Color de fondo de la página. */
+}
+
+/* ==========================================================================
+   2. Estructura Principal y Encabezado (Header)
+   ========================================================================== */
+
+.main-wrapper {
+    max-width: var(--max-width);
+    /* Limita el ancho del contenido. */
+    margin: 0 auto;
+    /* Centra el contenedor en la página. */
+    background-color: var(--white);
+    /* Fondo blanco para el contenido dentro del wrapper. */
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    /* Fondo degradado para el encabezado. */
+    padding: 20px 0;
+    color: #fff;
+    /* Texto blanco en el encabezado. */
+    width: 100%;
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    /* Usa Flexbox para alinear elementos. */
+    justify-content: space-between;
+    /* Distribuye el logo y la búsqueda a los extremos. */
+    align-items: center;
+    /* Centra verticalmente los elementos. */
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre el título y el icono. */
+}
+
+.logo-section h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-icon {
+    font-size: 40px;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    /* Espacio entre la caja de búsqueda y el botón. */
+}
+
+.search-box {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: rgba(255, 255, 255, .3);
+    /* Fondo semitransparente. */
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color .3s;
+}
+
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, .5);
+    /* Efecto hover para el botón de búsqueda. */
+}
+
+/* ==========================================================================
+   3. Contenido Principal (Main Container) - Diseño de 2 Columnas
+   ========================================================================== */
+
+.main-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    /* Usa Grid para el diseño de columnas. */
+    grid-template-columns: 2fr 1fr;
+    /* Define dos columnas: la izquierda es el doble de ancha que la derecha. */
+    gap: 30px;
+    /* Espacio entre las columnas. */
+    background-color: var(--light-gray);
+}
+
+.left-section {
+    /* Columna principal de contenido. */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Espacio entre las secciones de contenido. */
+}
+
+.right-section {
+    /* Columna lateral (sidebar). */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================================================
+   4. Estilos de Secciones de Contenido (Izquierda)
+   ========================================================================== */
+
+.content-section,
+.intro-section,
+.objectives-section {
+    /* Estilos comunes para las secciones de la columna izquierda. */
+    background-color: var(--white);
+    padding: 25px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.content-section h2,
+.intro-section h2,
+.objectives-section h2 {
+    /* Estilos para los títulos de sección. */
+    color: var(--dark-gray);
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.content-section ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.nav-table {
+    /* Estilos para la tabla de navegación (índice). */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-gray);
+}
+
+.nav-table h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.nav-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-gray);
+    font-size: 12px;
+}
+
+.nav-table td {
+    border: 1px solid var(--border-gray);
+    padding: 10px;
+    text-align: left;
+    background-color: var(--white);
+}
+
+.nav-table strong {
+    color: var(--primary-blue);
+    /* Destaca los encabezados de columna de la tabla. */
+}
+
+.nav-table a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.nav-table a:hover {
+    text-decoration: underline;
+}
+
+.intro-section p {
+    text-align: justify;
+    /* Justifica el texto de la introducción. */
+    font-size: 14px;
+}
+
+.objectives-content {
+    /* Contenedor para los cuadros de objetivos y público. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas iguales. */
+    gap: 20px;
+}
+
+.objectives-box {
+    padding: 15px;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+
+.objectives-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.objectives-box p {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.objectives-box ul {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.objectives-box li {
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   5. Estilos de la Columna Derecha (Sidebar)
+   ========================================================================== */
+
+.main-image {
+    /* Estilos para el contenedor de la imagen principal/placeholder. */
+    background-color: var(--white);
+    padding: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.main-image h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.image-placeholder {
+    /* Estilos para el contenedor del SVG de marcador de posición. */
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #ffb6d9 0, #87ceeb 50%, #90ee90 100%);
+    /* Fondo degradado decorativo. */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-placeholder svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ets-list {
+    /* Estilos para la lista de ETS en el sidebar. */
+    background-color: var(--white);
+    padding: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.ets-list h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+    text-align: center;
+}
+
+.ets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Lista de ETS en dos columnas. */
+    gap: 10px;
+}
+
+.ets-item {
+    background-color: var(--light-gray);
+    padding: 10px;
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--text-gray);
+}
+
+/* ==========================================================================
+   6. Secciones de Contenido Principal (General Info, FAQ, Myths)
+   ========================================================================== */
+
+.section-separator {
+    /* Separador visual entre las secciones principales. */
+    height: 40px;
+    background-color: var(--white);
+    margin: 0;
+}
+
+.faq-section,
+.general-info-section,
+.infographics-section,
+.news-section,
+.resources-section,
+.tools-section {
+    /* Estilos comunes para las secciones de contenido completo. */
+    background-color: var(--white);
+    padding: 40px 0;
+}
+
+.section-container {
+    /* Contenedor para centrar el contenido de las secciones. */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-section h2,
+.general-info-section h2,
+.infographics-section h2,
+.news-section h2,
+.resources-section h2,
+.tools-section h2 {
+    /* Estilos para los títulos de las secciones principales. */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--dark-gray);
+}
+
+.info-intro {
+    /* Estilos para la caja de definición de "¿Qué son las ETS?". */
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.info-intro h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+}
+
+.info-intro p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.types-title {
+    /* Título para la subsección de "Tipos de ETS". */
+    font-size: 16px;
+    font-weight: 700;
+    margin: 30px 0 20px 0;
+    color: var(--dark-gray);
+}
+
+.types-grid {
+    /* Contenedor para las tarjetas de tipos de ETS. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas iguales. */
+    gap: 20px;
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    /* Fondo degradado para destacar la sección. */
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.type-card {
+    /* Estilos para cada tarjeta de tipo de ETS. */
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.type-image {
+    /* Marcador de posición para la imagen/icono de la ETS. */
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.type-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.type-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-gray);
+    text-align: justify;
+}
+
+.ver-mas {
+    /* Estilos para el enlace "Ver más". */
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ver-mas:hover {
+    text-decoration: underline;
+}
+
+.faq-grid {
+    /* Contenedor para las tarjetas de Preguntas Frecuentes. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas iguales. */
+    gap: 20px;
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    /* Fondo degradado para destacar la sección. */
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.faq-card {
+    /* Estilos para cada tarjeta de FAQ. */
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--dark-gray);
+}
+
+.faq-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.faq-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    text-align: justify;
+}
+
+.myths-section {
+    /* Estilos para la sección de Mitos y Realidades. */
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    /* Fondo degradado. */
+    padding: 40px 0;
+    color: #fff;
+    width: 100%;
+}
+
+.myths-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.myths-grid {
+    /* Contenedor para las tarjetas de Mitos y Realidades. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas iguales. */
+    gap: 20px;
+}
+
+.myth-card {
+    /* Estilos para cada tarjeta de Mito/Realidad. */
+    background-color: rgba(255, 255, 255, .95);
+    /* Fondo casi blanco para contraste. */
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--dark-gray);
+}
+
+.myth-label,
+.reality-label {
+    /* Etiquetas para diferenciar Mito y Realidad. */
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.myth-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.source {
+    /* Estilos para la fuente de la información. */
+    font-size: 11px;
+    color: var(--text-gray);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-gray);
+}
+
+.source a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.source a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   7. Secciones de Herramientas, Videos e Infografías
+   ========================================================================== */
+
+.tools-grid {
+    /* Contenedor para las tarjetas de herramientas interactivas. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas iguales. */
+    gap: 30px;
+}
+
+.tool-card {
+    /* Estilos base para las tarjetas de herramientas. */
+    background-color: var(--light-gray);
+    padding: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+/* Estilos para el contenido inyectado por JavaScript en las herramientas (cuestionario y localizador) */
+.cuestionario-container {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.cuestionario-container h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+}
+
+.cuestionario-container p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--text-gray);
+}
+
+.sintomas-checkbox {
+    /* Contenedor para la lista de checkboxes de síntomas. */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sintoma-label {
+    /* Estilos para cada etiqueta de síntoma (que contiene el checkbox). */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--dark-gray);
+    padding: 8px;
+    background-color: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+    transition: background-color .3s;
+}
+
+.sintoma-label:hover {
+    background-color: #f5f5f5;
+}
+
+.sintoma-check {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.cuestionario-botones {
+    /* Contenedor para los botones de evaluar y limpiar. */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-evaluar,
+.btn-limpiar {
+    /* Estilos comunes para los botones. */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color .3s;
+}
+
+.btn-evaluar {
+    /* Estilos específicos para el botón de evaluar (azul). */
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.btn-evaluar:hover {
+    background-color: #07c;
+}
+
+.btn-limpiar {
+    /* Estilos específicos para el botón de limpiar (gris). */
+    background-color: var(--border-gray);
+    color: var(--dark-gray);
+}
+
+.btn-limpiar:hover {
+    background-color: #b3b3b3;
+}
+
+.resultados-ocultos {
+    display: none;
+    /* Clase usada por JS para ocultar/mostrar los resultados del cuestionario. */
+}
+
+.resultado-container {
+    /* Contenedor de los resultados del cuestionario. */
+    background-color: var(--white);
+    padding: 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.resultado-container h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--dark-gray);
+}
+
+.resultado-container h5 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: var(--dark-gray);
+}
+
+.resultado-container ul {
+    margin-left: 20px;
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.resultado-container li {
+    margin-bottom: 6px;
+}
+
+.ets-info {
+    /* Estilos para la información detallada de la ETS sugerida. */
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.ets-info strong {
+    color: var(--primary-blue);
+}
+
+.ets-info p {
+    margin-top: 5px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.recomendacion {
+    /* Estilo de alerta amarilla para recomendaciones. */
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 12px;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #856404;
+}
+
+.resultado-alerta {
+    /* Estilo de alerta roja para resultados que sugieren atención médica. */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px;
+    border-radius: 3px;
+    color: #721c24;
+    font-size: 13px;
+}
+
+.localizador-container {
+    /* Contenedor del localizador de centros. */
+    background-color: var(--light-gray);
+    padding: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.localizador-container h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+}
+
+.localizador-container p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--text-gray);
+}
+
+.ciudades-grid {
+    /* Contenedor para los botones de selección de ciudad. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-ciudad {
+    /* Estilos para los botones de ciudad. */
+    padding: 12px;
+    border: 1px solid var(--primary-blue);
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all .3s;
+}
+
+.btn-ciudad:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.info-centro-oculta {
+    display: none;
+    /* Clase usada por JS para ocultar/mostrar la información del centro. */
+}
+
+.centro-info {
+    /* Contenedor de la información del centro de atención. */
+    background-color: var(--white);
+    padding: 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.centro-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--primary-blue);
+}
+
+.centro-detalles {
+    font-size: 12px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.centro-detalles p {
+    margin-bottom: 6px;
+}
+
+.centro-detalles strong {
+    color: var(--dark-gray);
+}
+
+.centro-recomendacion {
+    /* Estilo de alerta azul claro para recomendaciones de centros. */
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #0c5460;
+}
+
+.videos-section {
+    /* Estilos para la sección de Videos. */
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    padding: 40px 0;
+    color: #fff;
+    width: 100%;
+}
+
+.videos-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.videos-grid {
+    /* Contenedor para las tarjetas de video. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas. */
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.video-card {
+    /* Estilos para cada tarjeta de video. */
+    background-color: rgba(255, 255, 255, .1);
+    /* Fondo semitransparente. */
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+.video-placeholder {
+    /* Marcador de posición para la miniatura del video. */
+    width: 150px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.video-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.infographics-section {
+    /* Estilos para la sección de Infografías. */
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    padding: 40px 0;
+    color: #fff;
+    width: 100%;
+}
+
+.infographics-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.infographics-grid {
+    /* Contenedor para las tarjetas de infografías. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas. */
+    gap: 20px;
+}
+
+.infographic-card {
+    /* Estilos para cada tarjeta de infografía. */
+    background-color: var(--white);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.infographic-placeholder {
+    /* Marcador de posición para la imagen de la infografía. */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--dark-gray);
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   8. Sección de Recursos y Noticias
+   ========================================================================== */
+
+.resources-section {
+    /* Estilos para la sección de Recursos de Ayuda. */
+    background-color: var(--light-gray);
+    padding: 40px 0;
+}
+
+.resources-table {
+    /* Estilos para la tabla de contactos. */
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-gray);
+}
+
+.resources-table th {
+    /* Encabezados de la tabla. */
+    background-color: #999;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.resources-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-gray);
+    font-size: 12px;
+}
+
+.resources-table tbody tr:nth-child(2n) {
+    /* Rayado de filas (cebreado) para mejor lectura. */
+    background-color: var(--light-gray);
+}
+
+.guides-section {
+    /* Contenedor para las guías y recursos oficiales. */
+    background-color: var(--white);
+    padding: 25px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+}
+
+.guides-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+
+.guide-subsection {
+    margin-bottom: 20px;
+}
+
+.guide-subsection h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.guide-subsection p {
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.guide-links {
+    /* Lista de enlaces para descargar guías. */
+    list-style: none;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.guide-links li {
+    margin-bottom: 5px;
+}
+
+.guide-links a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.guide-links a:hover {
+    text-decoration: underline;
+}
+
+.news-section {
+    /* Estilos para la sección de Vlogs y Noticias. */
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    padding: 40px 0;
+    color: #fff;
+    width: 100%;
+}
+
+.news-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.news-grid {
+    /* Contenedor para las tarjetas de noticias. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas. */
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.news-card {
+    /* Estilos para cada tarjeta de noticia. */
+    background-color: rgba(255, 255, 255, .95);
+    border-radius: 5px;
+    overflow: hidden;
+    color: var(--dark-gray);
+}
+
+.news-image {
+    /* Marcador de posición para la imagen de la noticia. */
+    width: 100%;
+    height: 150px;
+    background-color: #ddd;
+}
+
+.news-card p {
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 60px;
+}
+
+.btn-saber-mas {
+    /* Estilos para el botón "Saber más". */
+    display: block;
+    margin: 0 15px 15px;
+    padding: 8px 20px;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--dark-gray);
+    font-weight: 700;
+    transition: background-color .3s;
+}
+
+.btn-saber-mas:hover {
+    background-color: var(--border-gray);
+}
+
+/* ==========================================================================
+   9. Pie de Página (Footer)
+   ========================================================================== */
+
+.footer {
+    background-color: var(--light-gray);
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border-gray);
+}
+
+.footer-container {
+    /* Contenedor para las columnas del pie de página. */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Cuatro columnas iguales. */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.footer-column p {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.footer-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-column a:hover {
+    color: var(--primary-blue);
+}
+
+.footer-credits {
+    /* Sección de créditos de los creadores. */
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.footer-credits p {
+    font-size: 12px;
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+.footer-bottom {
+    /* Sección de advertencia y derechos de autor (fondo azul). */
+    background: linear-gradient(135deg, var(--primary-blue) 0, #0cf 100%);
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 11px;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* ==========================================================================
+   10. Media Queries (Diseño Responsivo)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Estilos aplicados en pantallas medianas (tablets). */
+    .main-container {
+        grid-template-columns: 1fr;
+        /* El contenido principal pasa a ser una sola columna. */
+    }
+
+    .header-container {
+        flex-direction: column;
+        /* El encabezado se apila verticalmente. */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .search-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .faq-grid,
+    .infographics-grid,
+    .myths-grid,
+    .news-grid,
+    .tools-grid,
+    .types-grid {
+        grid-template-columns: 1fr;
+        /* Las cuadrículas de 3 o 2 columnas pasan a ser una sola columna. */
+    }
+
+    .objectives-content {
+        grid-template-columns: 1fr;
+        /* Los objetivos pasan a ser una sola columna. */
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        /* El pie de página pasa a dos columnas. */
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        /* Los videos pasan a ser una sola columna. */
+    }
+
+    .video-card {
+        flex-direction: column;
+        /* El contenido de la tarjeta de video se apila. */
+    }
+
+    .video-placeholder {
+        width: 100%;
+        height: 150px;
+    }
+
+    .ciudades-grid {
+        grid-template-columns: 1fr;
+        /* Los botones de ciudad pasan a ser una sola columna. */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Estilos aplicados en pantallas pequeñas (móviles). */
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .logo-section h1 {
+        font-size: 24px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .main-container {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* El pie de página pasa a una sola columna. */
+    }
+
+    .nav-table table {
+        font-size: 10px;
+    }
+
+    .nav-table td {
+        padding: 5px;
+    }
+}
